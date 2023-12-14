@@ -38,7 +38,9 @@ let asyncFunction = async () => {
     console.log(johnProfile);
     let johnOrder = await getJohnOrders();
     console.log(johnOrder);
-  } catch (error) {}
+  } catch (errorMessage) {
+    console.log(errorMessage);
+  }
 };
 
 asyncFunction();
