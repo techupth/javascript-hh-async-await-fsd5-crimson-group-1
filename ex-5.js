@@ -1,5 +1,5 @@
 // Exercise #5
-let getJohnProfile = () => {
+let getJohnProfile = async () => {
   return new Promise(function (_, reject) {
     setTimeout(
       () =>
@@ -11,4 +11,23 @@ let getJohnProfile = () => {
     );
   });
 };
-// Start coding here
+
+async function onFailure(data) {
+  let message = {
+    errorCode: 500,
+    message: "👿 Failed to request data from server",
+  };
+  return message;
+}
+
+let asyncFunction = async () => {
+  try {
+    let johnProfile = await getJohnProfile();
+    console.log(johnProfile);
+  } catch (error) {
+    let errorMessage = await onFailure();
+    console.log(errorMessage);
+  }
+};
+
+asyncFunction();

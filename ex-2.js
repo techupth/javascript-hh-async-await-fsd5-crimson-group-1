@@ -12,4 +12,12 @@ let getJohnProfile = () => {
   });
 };
 
-// Start coding here
+function onFailure(data) {
+  let message = {
+    errorCode: 500,
+    message: "👿 Failed to request data from server",
+  };
+  console.log(message);
+}
+
+getJohnProfile().catch(onFailure);
