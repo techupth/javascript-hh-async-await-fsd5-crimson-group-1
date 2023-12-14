@@ -33,3 +33,16 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
+function onSuccess(data) {
+  console.log(data);
+}
+
+function onFailure(error) {
+  console.log(error);
+}
+
+getJohnProfile()
+  .then(onSuccess)
+  .then(getJohnOrders)
+  .then(onSuccess)
+  .catch(onFailure);
