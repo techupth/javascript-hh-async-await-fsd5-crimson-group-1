@@ -34,15 +34,14 @@ let getJohnOrders = () => {
 
 // Start coding here
 
-async function asynchronousFunction() {
+async function asynconousFunction() {
   try {
-    const profile = await getJohnProfile();
-    console.log(profile);
-    const orders = await getJohnOrders();
-    console.log(orders);
+    let johnProfile = await getJohnProfile();
+    console.log(johnProfile);
+    let johnOrder = await getJohnOrders();
+    console.log(johnOrder);
   } catch (error) {
     console.log(error);
   }
 }
-
-asynchronousFunction(getJohnProfile);
+asynconousFunction();
